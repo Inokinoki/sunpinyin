@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14270C112528B35F00FFAEB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14270C102528B35F00FFAEB0 /* AppDelegate.m */; };
+		14270C132528B36100FFAEB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14270C122528B36100FFAEB0 /* Assets.xcassets */; };
+		14270C162528B36100FFAEB0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14270C142528B36100FFAEB0 /* MainMenu.xib */; };
+		14270C192528B36100FFAEB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14270C182528B36100FFAEB0 /* main.m */; };
+		14270C222528B89200FFAEB0 /* macos_keycode.m in Sources */ = {isa = PBXBuildFile; fileRef = 14270C212528B89200FFAEB0 /* macos_keycode.m */; };
+		14270C272528B8BC00FFAEB0 /* SunPinyinApplicationDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14270C242528B8BC00FFAEB0 /* SunPinyinApplicationDelegate.mm */; };
+		14270C282528B8BC00FFAEB0 /* SunPinyinInputController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14270C262528B8BC00FFAEB0 /* SunPinyinInputController.mm */; };
+		14270C2F2528B8E700FFAEB0 /* CandidateWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 14270C292528B8E700FFAEB0 /* CandidateWindow.m */; };
+		14270C302528B8E700FFAEB0 /* imi_imkitwin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14270C2A2528B8E700FFAEB0 /* imi_imkitwin.mm */; };
+		14270C312528B8E700FFAEB0 /* imi_session_wrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14270C2E2528B8E700FFAEB0 /* imi_session_wrapper.mm */; };
+		14270CCB2528B99400FFAEB0 /* portability.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270C822528B99300FFAEB0 /* portability.cpp */; };
+		14270CCC2528B99400FFAEB0 /* slm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270C842528B99300FFAEB0 /* slm.cpp */; };
+		14270CE62528B9C800FFAEB0 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14270CE52528B9C800FFAEB0 /* Carbon.framework */; };
+		14270CE82528B9CE00FFAEB0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14270CE72528B9CE00FFAEB0 /* Cocoa.framework */; };
+		14270CEA2528B9D800FFAEB0 /* InputMethodKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14270CE92528B9D800FFAEB0 /* InputMethodKit.framework */; };
+		14270CEC2528B9DD00FFAEB0 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14270CEB2528B9DD00FFAEB0 /* Python.framework */; };
+		14270CEF2528BA3800FFAEB0 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14270CED2528BA3800FFAEB0 /* Growl.framework */; };
+		14270CF02528BA3800FFAEB0 /* Growl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14270CED2528BA3800FFAEB0 /* Growl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14270CF12528BA3800FFAEB0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14270CEE2528BA3800FFAEB0 /* Sparkle.framework */; };
+		14270CF22528BA3800FFAEB0 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14270CEE2528BA3800FFAEB0 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14270D182528BAD100FFAEB0 /* imi_context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270CF92528BACF00FFAEB0 /* imi_context.cpp */; };
+		14270D192528BAD100FFAEB0 /* imi_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270CFC2528BACF00FFAEB0 /* imi_data.cpp */; };
+		14270D1A2528BAD100FFAEB0 /* imi_winHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D012528BAD000FFAEB0 /* imi_winHandler.cpp */; };
+		14270D1B2528BAD100FFAEB0 /* lattice_states.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D022528BAD000FFAEB0 /* lattice_states.cpp */; };
+		14270D1C2528BAD100FFAEB0 /* ic_history.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D062528BAD000FFAEB0 /* ic_history.cpp */; };
+		14270D1D2528BAD100FFAEB0 /* imi_option_event.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D082528BAD000FFAEB0 /* imi_option_event.cpp */; };
+		14270D1E2528BAD100FFAEB0 /* userdict.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D092528BAD000FFAEB0 /* userdict.cpp */; };
+		14270D1F2528BAD100FFAEB0 /* imi_options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D0C2528BAD000FFAEB0 /* imi_options.cpp */; };
+		14270D212528BAD100FFAEB0 /* imi_funcobjs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D112528BAD100FFAEB0 /* imi_funcobjs.cpp */; };
+		14270D222528BAD100FFAEB0 /* imi_uiobjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D132528BAD100FFAEB0 /* imi_uiobjects.cpp */; };
+		14270D232528BAD100FFAEB0 /* imi_view.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D152528BAD100FFAEB0 /* imi_view.cpp */; };
+		14270D242528BAD100FFAEB0 /* imi_view_classic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D162528BAD100FFAEB0 /* imi_view_classic.cpp */; };
+		14270D2F2528BC2100FFAEB0 /* pytrie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D292528BC2100FFAEB0 /* pytrie.cpp */; };
+		14270D402528BC4900FFAEB0 /* shuangpin_seg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D332528BC4900FFAEB0 /* shuangpin_seg.cpp */; };
+		14270D412528BC4900FFAEB0 /* pinyin_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D362528BC4900FFAEB0 /* pinyin_data.cpp */; };
+		14270D422528BC4900FFAEB0 /* pinyin_seg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D372528BC4900FFAEB0 /* pinyin_seg.cpp */; };
+		14270D432528BC4900FFAEB0 /* hunpin_seg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D392528BC4900FFAEB0 /* hunpin_seg.cpp */; };
+		14270D442528BC4900FFAEB0 /* shuangpin_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D3C2528BC4900FFAEB0 /* shuangpin_data.cpp */; };
+		14270D4D2528C96900FFAEB0 /* imi_plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14270D4C2528C96800FFAEB0 /* imi_plugin.cpp */; };
+		14270D4F2528D01C00FFAEB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14270D4E2528D01C00FFAEB0 /* InfoPlist.strings */; };
+		14270D532528D17900FFAEB0 /* preferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14270D512528D17900FFAEB0 /* preferences.plist */; };
+		14270D542528D17900FFAEB0 /* SunPinyin.icns in Resources */ = {isa = PBXBuildFile; fileRef = 14270D522528D17900FFAEB0 /* SunPinyin.icns */; };
+		14270D572528D25B00FFAEB0 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14270D562528D25B00FFAEB0 /* MainMenu.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14270CF32528BA3800FFAEB0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14270CF02528BA3800FFAEB0 /* Growl.framework in Embed Frameworks */,
+				14270CF22528BA3800FFAEB0 /* Sparkle.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		14270C0C2528B35F00FFAEB0 /* SunPinyin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunPinyin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14270C0F2528B35F00FFAEB0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14270C102528B35F00FFAEB0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14270C122528B36100FFAEB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		14270C152528B36100FFAEB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		14270C172528B36100FFAEB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14270C182528B36100FFAEB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14270C1A2528B36100FFAEB0 /* SunPinyin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SunPinyin.entitlements; sourceTree = "<group>"; };
+		14270C202528B86600FFAEB0 /* macos_keycode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macos_keycode.h; sourceTree = SOURCE_ROOT; };
+		14270C212528B89200FFAEB0 /* macos_keycode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = macos_keycode.m; sourceTree = SOURCE_ROOT; };
+		14270C232528B8BC00FFAEB0 /* SunPinyinInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunPinyinInputController.h; sourceTree = SOURCE_ROOT; };
+		14270C242528B8BC00FFAEB0 /* SunPinyinApplicationDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SunPinyinApplicationDelegate.mm; sourceTree = SOURCE_ROOT; };
+		14270C252528B8BC00FFAEB0 /* SunPinyinApplicationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SunPinyinApplicationDelegate.h; sourceTree = SOURCE_ROOT; };
+		14270C262528B8BC00FFAEB0 /* SunPinyinInputController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SunPinyinInputController.mm; sourceTree = SOURCE_ROOT; };
+		14270C292528B8E700FFAEB0 /* CandidateWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandidateWindow.m; sourceTree = SOURCE_ROOT; };
+		14270C2A2528B8E700FFAEB0 /* imi_imkitwin.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = imi_imkitwin.mm; sourceTree = SOURCE_ROOT; };
+		14270C2B2528B8E700FFAEB0 /* imi_imkitwin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imi_imkitwin.h; sourceTree = SOURCE_ROOT; };
+		14270C2C2528B8E700FFAEB0 /* imi_session_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imi_session_wrapper.h; sourceTree = SOURCE_ROOT; };
+		14270C2D2528B8E700FFAEB0 /* CandidateWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandidateWindow.h; sourceTree = SOURCE_ROOT; };
+		14270C2E2528B8E700FFAEB0 /* imi_session_wrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = imi_session_wrapper.mm; sourceTree = SOURCE_ROOT; };
+		14270C812528B99300FFAEB0 /* portability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = portability.h; path = ../../src/portability.h; sourceTree = "<group>"; };
+		14270C822528B99300FFAEB0 /* portability.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = portability.cpp; path = ../../src/portability.cpp; sourceTree = "<group>"; };
+		14270C842528B99300FFAEB0 /* slm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slm.cpp; sourceTree = "<group>"; };
+		14270C9E2528B99300FFAEB0 /* slm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slm.h; sourceTree = "<group>"; };
+		14270CE52528B9C800FFAEB0 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		14270CE72528B9CE00FFAEB0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		14270CE92528B9D800FFAEB0 /* InputMethodKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputMethodKit.framework; path = System/Library/Frameworks/InputMethodKit.framework; sourceTree = SDKROOT; };
+		14270CEB2528B9DD00FFAEB0 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		14270CED2528BA3800FFAEB0 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
+		14270CEE2528BA3800FFAEB0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		14270CF92528BACF00FFAEB0 /* imi_context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_context.cpp; path = "../../src/ime-core/imi_context.cpp"; sourceTree = "<group>"; };
+		14270CFA2528BACF00FFAEB0 /* lattice_states.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lattice_states.h; path = "../../src/ime-core/lattice_states.h"; sourceTree = "<group>"; };
+		14270CFB2528BACF00FFAEB0 /* imi_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_defines.h; path = "../../src/ime-core/imi_defines.h"; sourceTree = "<group>"; };
+		14270CFC2528BACF00FFAEB0 /* imi_data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_data.cpp; path = "../../src/ime-core/imi_data.cpp"; sourceTree = "<group>"; };
+		14270CFD2528BACF00FFAEB0 /* ic_history.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ic_history.h; path = "../../src/ime-core/ic_history.h"; sourceTree = "<group>"; };
+		14270CFE2528BACF00FFAEB0 /* imi_uiobjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_uiobjects.h; path = "../../src/ime-core/imi_uiobjects.h"; sourceTree = "<group>"; };
+		14270CFF2528BACF00FFAEB0 /* imi_keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_keys.h; path = "../../src/ime-core/imi_keys.h"; sourceTree = "<group>"; };
+		14270D002528BAD000FFAEB0 /* imi_view_classic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_view_classic.h; path = "../../src/ime-core/imi_view_classic.h"; sourceTree = "<group>"; };
+		14270D012528BAD000FFAEB0 /* imi_winHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_winHandler.cpp; path = "../../src/ime-core/imi_winHandler.cpp"; sourceTree = "<group>"; };
+		14270D022528BAD000FFAEB0 /* lattice_states.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = lattice_states.cpp; path = "../../src/ime-core/lattice_states.cpp"; sourceTree = "<group>"; };
+		14270D032528BAD000FFAEB0 /* imi_funcobjs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_funcobjs.h; path = "../../src/ime-core/imi_funcobjs.h"; sourceTree = "<group>"; };
+		14270D052528BAD000FFAEB0 /* imi_options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_options.h; path = "../../src/ime-core/imi_options.h"; sourceTree = "<group>"; };
+		14270D062528BAD000FFAEB0 /* ic_history.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ic_history.cpp; path = "../../src/ime-core/ic_history.cpp"; sourceTree = "<group>"; };
+		14270D072528BAD000FFAEB0 /* imi_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_data.h; path = "../../src/ime-core/imi_data.h"; sourceTree = "<group>"; };
+		14270D082528BAD000FFAEB0 /* imi_option_event.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_option_event.cpp; path = "../../src/ime-core/imi_option_event.cpp"; sourceTree = "<group>"; };
+		14270D092528BAD000FFAEB0 /* userdict.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = userdict.cpp; path = "../../src/ime-core/userdict.cpp"; sourceTree = "<group>"; };
+		14270D0B2528BAD000FFAEB0 /* imi_winHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_winHandler.h; path = "../../src/ime-core/imi_winHandler.h"; sourceTree = "<group>"; };
+		14270D0C2528BAD000FFAEB0 /* imi_options.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_options.cpp; path = "../../src/ime-core/imi_options.cpp"; sourceTree = "<group>"; };
+		14270D0E2528BAD000FFAEB0 /* imi_context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_context.h; path = "../../src/ime-core/imi_context.h"; sourceTree = "<group>"; };
+		14270D0F2528BAD000FFAEB0 /* imi_option_event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_option_event.h; path = "../../src/ime-core/imi_option_event.h"; sourceTree = "<group>"; };
+		14270D102528BAD000FFAEB0 /* userdict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = userdict.h; path = "../../src/ime-core/userdict.h"; sourceTree = "<group>"; };
+		14270D112528BAD100FFAEB0 /* imi_funcobjs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_funcobjs.cpp; path = "../../src/ime-core/imi_funcobjs.cpp"; sourceTree = "<group>"; };
+		14270D122528BAD100FFAEB0 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utils.h; path = "../../src/ime-core/utils.h"; sourceTree = "<group>"; };
+		14270D132528BAD100FFAEB0 /* imi_uiobjects.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_uiobjects.cpp; path = "../../src/ime-core/imi_uiobjects.cpp"; sourceTree = "<group>"; };
+		14270D142528BAD100FFAEB0 /* imi_view.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_view.h; path = "../../src/ime-core/imi_view.h"; sourceTree = "<group>"; };
+		14270D152528BAD100FFAEB0 /* imi_view.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_view.cpp; path = "../../src/ime-core/imi_view.cpp"; sourceTree = "<group>"; };
+		14270D162528BAD100FFAEB0 /* imi_view_classic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_view_classic.cpp; path = "../../src/ime-core/imi_view_classic.cpp"; sourceTree = "<group>"; };
+		14270D172528BAD100FFAEB0 /* imi_option_keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_option_keys.h; path = "../../src/ime-core/imi_option_keys.h"; sourceTree = "<group>"; };
+		14270D282528BC2100FFAEB0 /* pytrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pytrie.h; sourceTree = "<group>"; };
+		14270D292528BC2100FFAEB0 /* pytrie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pytrie.cpp; sourceTree = "<group>"; };
+		14270D332528BC4900FFAEB0 /* shuangpin_seg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shuangpin_seg.cpp; path = ../../src/pinyin/shuangpin_seg.cpp; sourceTree = "<group>"; };
+		14270D342528BC4900FFAEB0 /* pinyin_seg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pinyin_seg.h; path = ../../src/pinyin/pinyin_seg.h; sourceTree = "<group>"; };
+		14270D352528BC4900FFAEB0 /* hunpin_seg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hunpin_seg.h; path = ../../src/pinyin/hunpin_seg.h; sourceTree = "<group>"; };
+		14270D362528BC4900FFAEB0 /* pinyin_data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pinyin_data.cpp; path = ../../src/pinyin/pinyin_data.cpp; sourceTree = "<group>"; };
+		14270D372528BC4900FFAEB0 /* pinyin_seg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pinyin_seg.cpp; path = ../../src/pinyin/pinyin_seg.cpp; sourceTree = "<group>"; };
+		14270D382528BC4900FFAEB0 /* shuangpin_seg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shuangpin_seg.h; path = ../../src/pinyin/shuangpin_seg.h; sourceTree = "<group>"; };
+		14270D392528BC4900FFAEB0 /* hunpin_seg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = hunpin_seg.cpp; path = ../../src/pinyin/hunpin_seg.cpp; sourceTree = "<group>"; };
+		14270D3A2528BC4900FFAEB0 /* datrie_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = datrie_impl.h; path = ../../src/pinyin/datrie_impl.h; sourceTree = "<group>"; };
+		14270D3B2528BC4900FFAEB0 /* shuangpin_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shuangpin_data.h; path = ../../src/pinyin/shuangpin_data.h; sourceTree = "<group>"; };
+		14270D3C2528BC4900FFAEB0 /* shuangpin_data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shuangpin_data.cpp; path = ../../src/pinyin/shuangpin_data.cpp; sourceTree = "<group>"; };
+		14270D3D2528BC4900FFAEB0 /* syllable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = syllable.h; path = ../../src/pinyin/syllable.h; sourceTree = "<group>"; };
+		14270D3E2528BC4900FFAEB0 /* datrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = datrie.h; path = ../../src/pinyin/datrie.h; sourceTree = "<group>"; };
+		14270D3F2528BC4900FFAEB0 /* pinyin_data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pinyin_data.h; path = ../../src/pinyin/pinyin_data.h; sourceTree = "<group>"; };
+		14270D462528C30100FFAEB0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		14270D492528C56700FFAEB0 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		14270D4B2528C96800FFAEB0 /* imi_plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = imi_plugin.h; path = "../../src/ime-core/imi_plugin.h"; sourceTree = "<group>"; };
+		14270D4C2528C96800FFAEB0 /* imi_plugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = imi_plugin.cpp; path = "../../src/ime-core/imi_plugin.cpp"; sourceTree = "<group>"; };
+		14270D4E2528D01C00FFAEB0 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		14270D512528D17900FFAEB0 /* preferences.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = preferences.plist; sourceTree = "<group>"; };
+		14270D522528D17900FFAEB0 /* SunPinyin.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SunPinyin.icns; sourceTree = "<group>"; };
+		14270D562528D25B00FFAEB0 /* MainMenu.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = MainMenu.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14270C092528B35F00FFAEB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14270CEA2528B9D800FFAEB0 /* InputMethodKit.framework in Frameworks */,
+				14270CF12528BA3800FFAEB0 /* Sparkle.framework in Frameworks */,
+				14270CE82528B9CE00FFAEB0 /* Cocoa.framework in Frameworks */,
+				14270CEC2528B9DD00FFAEB0 /* Python.framework in Frameworks */,
+				14270CE62528B9C800FFAEB0 /* Carbon.framework in Frameworks */,
+				14270CEF2528BA3800FFAEB0 /* Growl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14270C032528B35F00FFAEB0 = {
+			isa = PBXGroup;
+			children = (
+				14270C332528B90700FFAEB0 /* sunpinyin-2.0 */,
+				14270D502528D02A00FFAEB0 /* Sources */,
+				14270D552528D19000FFAEB0 /* Resources */,
+				14270C0D2528B35F00FFAEB0 /* Products */,
+				14270CE42528B9C800FFAEB0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		14270C0D2528B35F00FFAEB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14270C0C2528B35F00FFAEB0 /* SunPinyin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14270C332528B90700FFAEB0 /* sunpinyin-2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				14270D322528BC3000FFAEB0 /* pinyin */,
+				14270D262528BC2100FFAEB0 /* lexicon */,
+				14270CF82528BAB300FFAEB0 /* ime-core */,
+				14270C822528B99300FFAEB0 /* portability.cpp */,
+				14270C812528B99300FFAEB0 /* portability.h */,
+				14270C832528B99300FFAEB0 /* slm */,
+			);
+			name = "sunpinyin-2.0";
+			sourceTree = "<group>";
+		};
+		14270C832528B99300FFAEB0 /* slm */ = {
+			isa = PBXGroup;
+			children = (
+				14270C842528B99300FFAEB0 /* slm.cpp */,
+				14270C9E2528B99300FFAEB0 /* slm.h */,
+			);
+			name = slm;
+			path = ../../src/slm;
+			sourceTree = "<group>";
+		};
+		14270CE42528B9C800FFAEB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14270D492528C56700FFAEB0 /* libc++.1.tbd */,
+				14270D462528C30100FFAEB0 /* libc++.tbd */,
+				14270CED2528BA3800FFAEB0 /* Growl.framework */,
+				14270CEE2528BA3800FFAEB0 /* Sparkle.framework */,
+				14270CEB2528B9DD00FFAEB0 /* Python.framework */,
+				14270CE92528B9D800FFAEB0 /* InputMethodKit.framework */,
+				14270CE72528B9CE00FFAEB0 /* Cocoa.framework */,
+				14270CE52528B9C800FFAEB0 /* Carbon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14270CF82528BAB300FFAEB0 /* ime-core */ = {
+			isa = PBXGroup;
+			children = (
+				14270D4C2528C96800FFAEB0 /* imi_plugin.cpp */,
+				14270D4B2528C96800FFAEB0 /* imi_plugin.h */,
+				14270D062528BAD000FFAEB0 /* ic_history.cpp */,
+				14270CFD2528BACF00FFAEB0 /* ic_history.h */,
+				14270CF92528BACF00FFAEB0 /* imi_context.cpp */,
+				14270D0E2528BAD000FFAEB0 /* imi_context.h */,
+				14270CFC2528BACF00FFAEB0 /* imi_data.cpp */,
+				14270D072528BAD000FFAEB0 /* imi_data.h */,
+				14270CFB2528BACF00FFAEB0 /* imi_defines.h */,
+				14270D112528BAD100FFAEB0 /* imi_funcobjs.cpp */,
+				14270D032528BAD000FFAEB0 /* imi_funcobjs.h */,
+				14270CFF2528BACF00FFAEB0 /* imi_keys.h */,
+				14270D082528BAD000FFAEB0 /* imi_option_event.cpp */,
+				14270D0F2528BAD000FFAEB0 /* imi_option_event.h */,
+				14270D172528BAD100FFAEB0 /* imi_option_keys.h */,
+				14270D0C2528BAD000FFAEB0 /* imi_options.cpp */,
+				14270D052528BAD000FFAEB0 /* imi_options.h */,
+				14270D132528BAD100FFAEB0 /* imi_uiobjects.cpp */,
+				14270CFE2528BACF00FFAEB0 /* imi_uiobjects.h */,
+				14270D162528BAD100FFAEB0 /* imi_view_classic.cpp */,
+				14270D002528BAD000FFAEB0 /* imi_view_classic.h */,
+				14270D152528BAD100FFAEB0 /* imi_view.cpp */,
+				14270D142528BAD100FFAEB0 /* imi_view.h */,
+				14270D012528BAD000FFAEB0 /* imi_winHandler.cpp */,
+				14270D0B2528BAD000FFAEB0 /* imi_winHandler.h */,
+				14270D022528BAD000FFAEB0 /* lattice_states.cpp */,
+				14270CFA2528BACF00FFAEB0 /* lattice_states.h */,
+				14270D092528BAD000FFAEB0 /* userdict.cpp */,
+				14270D102528BAD000FFAEB0 /* userdict.h */,
+				14270D122528BAD100FFAEB0 /* utils.h */,
+			);
+			name = "ime-core";
+			sourceTree = "<group>";
+		};
+		14270D262528BC2100FFAEB0 /* lexicon */ = {
+			isa = PBXGroup;
+			children = (
+				14270D282528BC2100FFAEB0 /* pytrie.h */,
+				14270D292528BC2100FFAEB0 /* pytrie.cpp */,
+			);
+			name = lexicon;
+			path = ../../src/lexicon;
+			sourceTree = "<group>";
+		};
+		14270D322528BC3000FFAEB0 /* pinyin */ = {
+			isa = PBXGroup;
+			children = (
+				14270D3A2528BC4900FFAEB0 /* datrie_impl.h */,
+				14270D3E2528BC4900FFAEB0 /* datrie.h */,
+				14270D392528BC4900FFAEB0 /* hunpin_seg.cpp */,
+				14270D352528BC4900FFAEB0 /* hunpin_seg.h */,
+				14270D362528BC4900FFAEB0 /* pinyin_data.cpp */,
+				14270D3F2528BC4900FFAEB0 /* pinyin_data.h */,
+				14270D372528BC4900FFAEB0 /* pinyin_seg.cpp */,
+				14270D342528BC4900FFAEB0 /* pinyin_seg.h */,
+				14270D3C2528BC4900FFAEB0 /* shuangpin_data.cpp */,
+				14270D3B2528BC4900FFAEB0 /* shuangpin_data.h */,
+				14270D332528BC4900FFAEB0 /* shuangpin_seg.cpp */,
+				14270D382528BC4900FFAEB0 /* shuangpin_seg.h */,
+				14270D3D2528BC4900FFAEB0 /* syllable.h */,
+			);
+			name = pinyin;
+			sourceTree = "<group>";
+		};
+		14270D502528D02A00FFAEB0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				14270C2D2528B8E700FFAEB0 /* CandidateWindow.h */,
+				14270C292528B8E700FFAEB0 /* CandidateWindow.m */,
+				14270C2B2528B8E700FFAEB0 /* imi_imkitwin.h */,
+				14270C2A2528B8E700FFAEB0 /* imi_imkitwin.mm */,
+				14270C2C2528B8E700FFAEB0 /* imi_session_wrapper.h */,
+				14270C2E2528B8E700FFAEB0 /* imi_session_wrapper.mm */,
+				14270C252528B8BC00FFAEB0 /* SunPinyinApplicationDelegate.h */,
+				14270C242528B8BC00FFAEB0 /* SunPinyinApplicationDelegate.mm */,
+				14270C232528B8BC00FFAEB0 /* SunPinyinInputController.h */,
+				14270C262528B8BC00FFAEB0 /* SunPinyinInputController.mm */,
+				14270C0F2528B35F00FFAEB0 /* AppDelegate.h */,
+				14270C102528B35F00FFAEB0 /* AppDelegate.m */,
+				14270C122528B36100FFAEB0 /* Assets.xcassets */,
+				14270C182528B36100FFAEB0 /* main.m */,
+				14270C1A2528B36100FFAEB0 /* SunPinyin.entitlements */,
+				14270C202528B86600FFAEB0 /* macos_keycode.h */,
+				14270C212528B89200FFAEB0 /* macos_keycode.m */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		14270D552528D19000FFAEB0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14270D512528D17900FFAEB0 /* preferences.plist */,
+				14270C172528B36100FFAEB0 /* Info.plist */,
+				14270D522528D17900FFAEB0 /* SunPinyin.icns */,
+				14270D4E2528D01C00FFAEB0 /* InfoPlist.strings */,
+				14270C142528B36100FFAEB0 /* MainMenu.xib */,
+				14270D562528D25B00FFAEB0 /* MainMenu.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14270C0B2528B35F00FFAEB0 /* SunPinyin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14270C1D2528B36100FFAEB0 /* Build configuration list for PBXNativeTarget "SunPinyin" */;
+			buildPhases = (
+				14270C082528B35F00FFAEB0 /* Sources */,
+				14270C092528B35F00FFAEB0 /* Frameworks */,
+				14270C0A2528B35F00FFAEB0 /* Resources */,
+				14270CF32528BA3800FFAEB0 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SunPinyin;
+			productName = SunPinyin;
+			productReference = 14270C0C2528B35F00FFAEB0 /* SunPinyin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14270C042528B35F00FFAEB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Open Solaris";
+				TargetAttributes = {
+					14270C0B2528B35F00FFAEB0 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 14270C072528B35F00FFAEB0 /* Build configuration list for PBXProject "SunPinyin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 14270C032528B35F00FFAEB0;
+			productRefGroup = 14270C0D2528B35F00FFAEB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14270C0B2528B35F00FFAEB0 /* SunPinyin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14270C0A2528B35F00FFAEB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14270D572528D25B00FFAEB0 /* MainMenu.strings in Resources */,
+				14270C132528B36100FFAEB0 /* Assets.xcassets in Resources */,
+				14270D532528D17900FFAEB0 /* preferences.plist in Resources */,
+				14270D542528D17900FFAEB0 /* SunPinyin.icns in Resources */,
+				14270D4F2528D01C00FFAEB0 /* InfoPlist.strings in Resources */,
+				14270C162528B36100FFAEB0 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14270C082528B35F00FFAEB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14270C312528B8E700FFAEB0 /* imi_session_wrapper.mm in Sources */,
+				14270C282528B8BC00FFAEB0 /* SunPinyinInputController.mm in Sources */,
+				14270D1A2528BAD100FFAEB0 /* imi_winHandler.cpp in Sources */,
+				14270CCC2528B99400FFAEB0 /* slm.cpp in Sources */,
+				14270D222528BAD100FFAEB0 /* imi_uiobjects.cpp in Sources */,
+				14270D422528BC4900FFAEB0 /* pinyin_seg.cpp in Sources */,
+				14270C192528B36100FFAEB0 /* main.m in Sources */,
+				14270D1D2528BAD100FFAEB0 /* imi_option_event.cpp in Sources */,
+				14270C112528B35F00FFAEB0 /* AppDelegate.m in Sources */,
+				14270D432528BC4900FFAEB0 /* hunpin_seg.cpp in Sources */,
+				14270C302528B8E700FFAEB0 /* imi_imkitwin.mm in Sources */,
+				14270D182528BAD100FFAEB0 /* imi_context.cpp in Sources */,
+				14270C222528B89200FFAEB0 /* macos_keycode.m in Sources */,
+				14270D4D2528C96900FFAEB0 /* imi_plugin.cpp in Sources */,
+				14270D192528BAD100FFAEB0 /* imi_data.cpp in Sources */,
+				14270D212528BAD100FFAEB0 /* imi_funcobjs.cpp in Sources */,
+				14270C272528B8BC00FFAEB0 /* SunPinyinApplicationDelegate.mm in Sources */,
+				14270C2F2528B8E700FFAEB0 /* CandidateWindow.m in Sources */,
+				14270D412528BC4900FFAEB0 /* pinyin_data.cpp in Sources */,
+				14270D1E2528BAD100FFAEB0 /* userdict.cpp in Sources */,
+				14270D402528BC4900FFAEB0 /* shuangpin_seg.cpp in Sources */,
+				14270D1C2528BAD100FFAEB0 /* ic_history.cpp in Sources */,
+				14270D232528BAD100FFAEB0 /* imi_view.cpp in Sources */,
+				14270D1F2528BAD100FFAEB0 /* imi_options.cpp in Sources */,
+				14270D242528BAD100FFAEB0 /* imi_view_classic.cpp in Sources */,
+				14270CCB2528B99400FFAEB0 /* portability.cpp in Sources */,
+				14270D1B2528BAD100FFAEB0 /* lattice_states.cpp in Sources */,
+				14270D2F2528BC2100FFAEB0 /* pytrie.cpp in Sources */,
+				14270D442528BC4900FFAEB0 /* shuangpin_data.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		14270C142528B36100FFAEB0 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14270C152528B36100FFAEB0 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14270C1B2528B36100FFAEB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		14270C1C2528B36100FFAEB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		14270C1E2528B36100FFAEB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_ENTITLEMENTS = SunPinyin/SunPinyin.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = GMJNW6P6DV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = (
+					../..,
+					../../src,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "\"$(LOCAL_LIBRARY_DIR)/Input Methods/\"";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DMACOSX",
+					"-DSUNPINYIN_DATA_DIR=\\\"/Library/Input\\ Methods/SunPinyin.app/Contents/Resources\\\"",
+					"-DHAVE_CONFIG_H",
+				);
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-liconv",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.opensolaris.inputmethod.SunPinyin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		14270C1F2528B36100FFAEB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CODE_SIGN_ENTITLEMENTS = SunPinyin/SunPinyin.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = GMJNW6P6DV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				HEADER_SEARCH_PATHS = (
+					../..,
+					../../src,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DMACOSX",
+					"-DSUNPINYIN_DATA_DIR=\\\"/Library/Input\\ Methods/SunPinyin.app/Contents/Resources\\\"",
+					"-DHAVE_CONFIG_H",
+				);
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-liconv",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.opensolaris.inputmethod.SunPinyin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14270C072528B35F00FFAEB0 /* Build configuration list for PBXProject "SunPinyin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14270C1B2528B36100FFAEB0 /* Debug */,
+				14270C1C2528B36100FFAEB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14270C1D2528B36100FFAEB0 /* Build configuration list for PBXNativeTarget "SunPinyin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14270C1E2528B36100FFAEB0 /* Debug */,
+				14270C1F2528B36100FFAEB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14270C042528B35F00FFAEB0 /* Project object */;
+}

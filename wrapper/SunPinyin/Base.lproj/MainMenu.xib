@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="252" id="253"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="252" userLabel="SunPinyinApplicationDelegate" customClass="SunPinyinApplicationDelegate">
+            <connections>
+                <outlet property="_candiWin" destination="273" id="275"/>
+                <outlet property="_ftTxtField" destination="304" id="437"/>
+                <outlet property="_menu" destination="268" id="271"/>
+                <outlet property="_prefPanel" destination="277" id="366"/>
+            </connections>
+        </customObject>
+        <menu title="Menu" id="268" userLabel="Menu (Menu)">
+            <items>
+                <menuItem title="Chinese Puncts" state="on" keyEquivalent="." id="438">
+                    <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                    <connections>
+                        <action selector="toggleChinesePuncts:" target="252" id="442"/>
+                        <binding destination="331" name="value" keyPath="values.inputChinesePuncts" id="441"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Full-Width Symbol" tag="1" keyEquivalent=" " id="443">
+                    <modifierMask key="keyEquivalentModifierMask" option="YES"/>
+                    <connections>
+                        <action selector="toggleFullSymbols:" target="252" id="444"/>
+                        <binding destination="331" name="value" keyPath="values.inputFullSymbols" id="446"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Preferences..." tag="2" id="269">
+                    <connections>
+                        <action selector="showPrefPanel:" target="252" id="383"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="140" y="152"/>
+        </menu>
+        <customObject id="273" userLabel="CandidateWindow" customClass="CandidateWindow"/>
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="277" userLabel="PrefPanel (Panel)" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" utility="YES" nonactivatingPanel="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="330" y="439" width="432" height="419"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <view key="contentView" id="278">
+                <rect key="frame" x="0.0" y="0.0" width="432" height="419"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="279">
+                        <rect key="frame" x="13" y="10" width="406" height="403"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="General" identifier="1" id="281">
+                                <view key="view" ambiguous="YES" id="282">
+                                    <rect key="frame" x="10" y="33" width="386" height="357"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="285">
+                                            <rect key="frame" x="23" y="321" width="145" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Pinyin Mode:" id="395">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <matrix toolTip="This setting would only affect the next activated input session!" verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="289">
+                                            <rect key="frame" x="171" y="296" width="163" height="42"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="163" height="20"/>
+                                            <size key="intercellSpacing" width="4" height="2"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="leading" alignment="left" inset="2" id="399">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="Quan Pin" imagePosition="leading" alignment="left" state="on" inset="2" id="292">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="Shuang Pin" imagePosition="leading" alignment="left" tag="1" inset="2" id="291">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                            <connections>
+                                                <binding destination="331" name="selectedTag" keyPath="values.pinyinMode" id="564"/>
+                                            </connections>
+                                        </matrix>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="284">
+                                            <rect key="frame" x="35" y="163" width="133" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Pagings:" id="394">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="762">
+                                            <rect key="frame" x="36" y="76" width="133" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Miscs:" id="763">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="288">
+                                            <rect key="frame" x="172" y="162" width="187" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Use -/= to page up/down" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="398">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.pagingByMinusAndEqual" id="418"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="287">
+                                            <rect key="frame" x="172" y="142" width="187" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Use [/] to page up/down" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="397">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.pagingByBrackets" id="409"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="286">
+                                            <rect key="frame" x="172" y="122" width="187" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Use ,/. to page up/down" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="396">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.pagingByCommaAndDot" id="411"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="727">
+                                            <rect key="frame" x="172" y="102" width="187" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Use ↑/↓ to page up/down" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="728">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.pagingByArrowUpAndDown" id="730"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="458">
+                                            <rect key="frame" x="14" y="258" width="155" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Switch English/Chinese:" id="459">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="673">
+                                            <rect key="frame" x="-28" y="230" width="197" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="On Switching:" id="674">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="472">
+                                            <rect key="frame" x="172" y="188" width="187" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Force to use US layout" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="475">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.usingUSKbLayout" id="480"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="764">
+                                            <rect key="frame" x="172" y="71" width="236" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Use ⌫ to cancel selections" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="765">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.cancelSelectionOnBackspace" id="768"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="473">
+                                            <rect key="frame" x="55" y="193" width="114" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Keyboard Layout:" id="474">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="481">
+                                            <rect key="frame" x="171" y="252" width="189" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="484" id="482">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" title="OtherViews" id="483">
+                                                    <items>
+                                                        <menuItem title="None" state="on" id="484"/>
+                                                        <menuItem title="With Caps Lock (⇪)" id="485"/>
+                                                        <menuItem title="With Shift (⇧)" id="486"/>
+                                                    </items>
+                                                </menu>
+                                                <connections>
+                                                    <binding destination="331" name="selectedIndex" keyPath="values.switchingPolicy" id="490"/>
+                                                </connections>
+                                            </popUpButtonCell>
+                                        </popUpButton>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="675">
+                                            <rect key="frame" x="171" y="224" width="189" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="Commit Pinyin String" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="680" id="676">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" title="OtherViews" id="677">
+                                                    <items>
+                                                        <menuItem title="Commit Pinyin String" state="on" id="680"/>
+                                                        <menuItem title="Commit Chinese Words" id="679"/>
+                                                    </items>
+                                                </menu>
+                                                <connections>
+                                                    <binding destination="331" name="selectedIndex" keyPath="values.commitPolicy" id="682"/>
+                                                </connections>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <binding destination="331" name="enabled" keyPath="values.switchingPolicy" id="688"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="555">
+                                            <rect key="frame" x="260" y="292" width="100" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <popUpButtonCell key="cell" type="push" title="MS2003" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="558" id="556">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="menu"/>
+                                                <menu key="menu" title="OtherViews" id="557">
+                                                    <items>
+                                                        <menuItem title="MS2003" state="on" id="558"/>
+                                                        <menuItem title="ABC" id="559"/>
+                                                        <menuItem title="ZiRanMa" id="560"/>
+                                                        <menuItem title="Pinyin++" id="561"/>
+                                                        <menuItem title="ZiGuang" id="562"/>
+                                                        <menuItem title="XiaoHe" id="769">
+                                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                                        </menuItem>
+                                                    </items>
+                                                </menu>
+                                                <connections>
+                                                    <binding destination="331" name="selectedIndex" keyPath="values.Shuangpin.Scheme" id="616"/>
+                                                    <binding destination="331" name="enabled" keyPath="values.pinyinMode" id="672"/>
+                                                </connections>
+                                            </popUpButtonCell>
+                                        </popUpButton>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Pinyin" identifier="Item 2" id="494">
+                                <view key="view" id="495">
+                                    <rect key="frame" x="10" y="33" width="386" height="357"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="501">
+                                            <rect key="frame" x="35" y="226" width="63" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="z - zh" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="502">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="640"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.ZhiZi" id="596"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="509">
+                                            <rect key="frame" x="35" y="206" width="63" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="c - ch" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="510">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.ChiCi" id="597"/>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="668"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="511">
+                                            <rect key="frame" x="35" y="186" width="63" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="s - sh" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="512">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="643"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.ShiSi" id="598"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="513">
+                                            <rect key="frame" x="35" y="166" width="77" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="an - ang" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="514">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.AnAng" id="599"/>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="644"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="515">
+                                            <rect key="frame" x="35" y="146" width="78" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="on - ong" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="516">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="645"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.OnOng" id="600"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="517">
+                                            <rect key="frame" x="35" y="126" width="78" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="en - eng" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="518">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.EnEng" id="601"/>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="646"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="519">
+                                            <rect key="frame" x="35" y="106" width="78" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="in - ing" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="520">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="647"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.InIng" id="602"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="545">
+                                            <rect key="frame" x="35" y="54" width="88" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="gn -&gt; ng" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="546">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.AutoCorrecting.Enabled" id="660"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.AutoCorrecting.GnNg" id="744"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="551">
+                                            <rect key="frame" x="182" y="54" width="88" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="uen -&gt; un" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="552">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.AutoCorrecting.Enabled" id="662"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.AutoCorrecting.UenUn" id="614"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="553">
+                                            <rect key="frame" x="182" y="34" width="88" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="iou -&gt; iu" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="554">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.AutoCorrecting.Enabled" id="665"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.AutoCorrecting.IouIu" id="615"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="547">
+                                            <rect key="frame" x="35" y="34" width="92" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="img -&gt; ing" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="548">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.AutoCorrecting.Enabled" id="664"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.AutoCorrecting.ImgIng" id="612"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="549">
+                                            <rect key="frame" x="35" y="14" width="92" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="uei -&gt; ui" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="550">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.AutoCorrecting.Enabled" id="667"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.AutoCorrecting.UeiUi" id="613"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="521">
+                                            <rect key="frame" x="182" y="226" width="86" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="eng - ong" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="522">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="648"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.EngOng" id="603"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="523">
+                                            <rect key="frame" x="182" y="206" width="86" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="ian - iang" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="524">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="650"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.IanIang" id="604"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="525">
+                                            <rect key="frame" x="182" y="186" width="93" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="uan - uang" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="526">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="652"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.UanUang" id="605"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="527">
+                                            <rect key="frame" x="182" y="166" width="93" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="l - n" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="528">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="653"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.NeLe" id="606"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="529">
+                                            <rect key="frame" x="182" y="146" width="93" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="f - h" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="530">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="655"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.FoHe" id="607"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="531">
+                                            <rect key="frame" x="182" y="126" width="93" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="r - l" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="532">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="656"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.LeRi" id="608"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="533">
+                                            <rect key="frame" x="182" y="106" width="93" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="k - g" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="534">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.Fuzzy.Enabled" id="659"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.KeGe" id="609"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="541">
+                                            <rect key="frame" x="15" y="252" width="101" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Fuzzy Pinyin" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="542">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.Enabled" id="595"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="747">
+                                            <rect key="frame" x="15" y="329" width="348" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Smarter Segmentation (only applicable for QuanPin)" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="748">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.FuzzySegs.Enabled" id="750"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="756">
+                                            <rect key="frame" x="35" y="306" width="348" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Enable Inner Fuzzies" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="757">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="enabled" keyPath="values.Quanpin.FuzzySegs.Enabled" id="761"/>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.FuzzySegs.InnerFuzzy.Enabled" id="759"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="751">
+                                            <rect key="frame" x="15" y="280" width="348" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Simpler Initials (z/c/s -&gt; zh/ch/sh)" bezelStyle="regularSquare" imagePosition="leading" alignment="left" state="on" inset="2" id="752">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.Fuzzy.SimplerInitials" id="755"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="543">
+                                            <rect key="frame" x="15" y="77" width="289" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Auto Correct (only applicable for QuanPin)" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="544">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.Quanpin.AutoCorrecting.Enabled" id="610"/>
+                                                </connections>
+                                            </buttonCell>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Candidates" identifier="2" id="280">
+                                <view key="view" id="298">
+                                    <rect key="frame" x="10" y="33" width="386" height="357"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="305">
+                                            <rect key="frame" x="110" y="253" width="38" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Font:" id="392">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="303">
+                                            <rect key="frame" x="284" y="240" width="94" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Select ..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="390">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="showFontPanel:" target="252" id="350"/>
+                                            </connections>
+                                        </button>
+                                        <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="307">
+                                            <rect key="frame" x="161" y="212" width="92" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <color key="color" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <binding destination="331" name="value" keyPath="values.bgColor" id="432">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </colorWell>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="306">
+                                            <rect key="frame" x="14" y="215" width="134" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Background:" id="393">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="470">
+                                            <rect key="frame" x="14" y="177" width="134" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Highlighting:" id="471">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="301">
+                                            <rect key="frame" x="54" y="142" width="94" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Transparency:" id="388">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="721">
+                                            <rect key="frame" x="54" y="111" width="94" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Radius:" id="722">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="302">
+                                            <rect key="frame" x="159" y="139" width="96" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="75" tickMarkPosition="above" sliderType="linear" id="389">
+                                                <font key="font" size="12" name="Helvetica"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.alpha" id="416"/>
+                                                </connections>
+                                            </sliderCell>
+                                        </slider>
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="723">
+                                            <rect key="frame" x="159" y="108" width="96" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <sliderCell key="cell" state="on" alignment="left" maxValue="10" doubleValue="5" tickMarkPosition="above" sliderType="linear" id="724">
+                                                <font key="font" size="12" name="Helvetica"/>
+                                                <connections>
+                                                    <binding destination="331" name="value" keyPath="values.radius" id="726"/>
+                                                </connections>
+                                            </sliderCell>
+                                        </slider>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="300">
+                                            <rect key="frame" x="14" y="289" width="134" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Total Candidates:" id="387">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <comboBox verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="299">
+                                            <rect key="frame" x="161" y="282" width="95" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="9" drawsBackground="YES" completes="NO" numberOfVisibleItems="6" id="386">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>4</string>
+                                                    <string>5</string>
+                                                    <string>6</string>
+                                                    <string>7</string>
+                                                    <string>8</string>
+                                                    <string>9</string>
+                                                </objectValues>
+                                            </comboBoxCell>
+                                            <connections>
+                                                <binding destination="331" name="value" keyPath="values.candiNumbers" id="436"/>
+                                            </connections>
+                                        </comboBox>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="304">
+                                            <rect key="frame" x="161" y="248" width="118" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="Hei 16" drawsBackground="YES" id="391">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="460">
+                                            <rect key="frame" x="23" y="326" width="125" height="17"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Candidate Charset:" id="461">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <comboBox verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="462">
+                                            <rect key="frame" x="161" y="319" width="95" height="26"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="GB2312" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="463">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>GB2312</string>
+                                                    <string>GBK</string>
+                                                    <string>GB18030</string>
+                                                </objectValues>
+                                            </comboBoxCell>
+                                            <connections>
+                                                <binding destination="331" name="value" keyPath="values.charset" id="465"/>
+                                            </connections>
+                                        </comboBox>
+                                        <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="466">
+                                            <rect key="frame" x="161" y="174" width="92" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <binding destination="331" name="value" keyPath="values.hlColor" id="469">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                    </dictionary>
+                                                </binding>
+                                            </connections>
+                                        </colorWell>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Punctations" identifier="Item 3" id="694">
+                                <view key="view" id="695">
+                                    <rect key="frame" x="10" y="33" width="386" height="357"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="696">
+                                            <rect key="frame" x="17" y="-3" width="352" height="353"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <clipView key="contentView" ambiguous="YES" id="nCW-0C-q3V">
+                                                <rect key="frame" x="1" y="0.0" width="350" height="352"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="700" id="699">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="327"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <size key="intercellSpacing" width="3" height="2"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                        <tableColumns>
+                                                            <tableColumn identifier="column1" width="55" minWidth="40" maxWidth="1000" id="701">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </tableHeaderCell>
+                                                                <buttonCell key="dataCell" type="check" bezelStyle="regularSquare" imagePosition="leading" alignment="left" inset="2" id="707">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="709" name="value" keyPath="arrangedObjects.enabled" id="715"/>
+                                                                </connections>
+                                                            </tableColumn>
+                                                            <tableColumn identifier="column2" editable="NO" width="123" minWidth="40" maxWidth="1000" id="702">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="ASCII Character">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" white="0.33333298560000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </tableHeaderCell>
+                                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="703">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="709" name="value" keyPath="arrangedObjects.ASCII" id="717">
+                                                                        <dictionary key="options">
+                                                                            <integer key="NSConditionallySetsEditable" value="1"/>
+                                                                        </dictionary>
+                                                                    </binding>
+                                                                </connections>
+                                                            </tableColumn>
+                                                            <tableColumn identifier="column3" width="163" minWidth="10" maxWidth="3.4028234663852886e+38" id="705">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Mapped String">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                                </tableHeaderCell>
+                                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="706">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                                <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="709" name="value" keyPath="arrangedObjects.mappedString" id="719"/>
+                                                                </connections>
+                                                            </tableColumn>
+                                                        </tableColumns>
+                                                    </tableView>
+                                                </subviews>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="698">
+                                                <rect key="frame" x="-100" y="-100" width="247" height="15"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="697">
+                                                <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <tableHeaderView key="headerView" id="700">
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="25"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </tableHeaderView>
+                                        </scrollView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="About" identifier="Item 4" id="731">
+                                <view key="view" id="732">
+                                    <rect key="frame" x="10" y="33" width="386" height="357"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="733">
+                                            <rect key="frame" x="11" y="9" width="166" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Check for Updates..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="736">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="checkForUpdates:" target="689" id="737"/>
+                                            </connections>
+                                        </button>
+                                        <button fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="734">
+                                            <rect key="frame" x="177" y="18" width="199" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="check" title="Check automatically" bezelStyle="regularSquare" imagePosition="leading" alignment="left" state="on" inset="2" id="735">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <binding destination="331" name="value" keyPath="values.SUEnableAutomaticChecks" id="738"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" preferredMaxLayoutWidth="348" translatesAutoresizingMaskIntoConstraints="NO" id="745">
+                                            <rect key="frame" x="17" y="112" width="352" height="233"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" state="on" alignment="center" id="746">
+                                                <font key="font" metaFont="system"/>
+                                                <string key="title">Version 2.0.2.1008
+
+    Copyright © 2010 SunPinyin.ORG
+    Sun Microsystems, Inc.
+    Lei Zhang &lt;phill.zhang@gmail.com&gt;
+    Yong Sun &lt;mail@yongsun.me&gt;
+    Kefu Chai &lt;tchaikov@gmail.com&gt;
+    Wei Xue &lt;breadson.xue@gmail.com&gt;
+    Leo Zheng &lt;zym361@gmail.com&gt;
+    Mike &lt;mikeandmore@gmail.com&gt;
+    chumsdock &lt;vorbei@gmail.com&gt;
+    Anthony Lee &lt;don.anthony.lee@gmail.com&gt;</string>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+            </view>
+            <point key="canvasLocation" x="140" y="151"/>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="331" userLabel="Shared User Defaults Controller"/>
+        <customObject id="689" customClass="SUUpdater"/>
+        <arrayController id="709">
+            <declaredKeys>
+                <string>enabled</string>
+                <string>ASCII</string>
+                <string>mappedString</string>
+            </declaredKeys>
+            <connections>
+                <binding destination="331" name="contentArray" keyPath="values.punctationMappings" id="720">
+                    <dictionary key="options">
+                        <integer key="NSHandlesContentAsCompoundValue" value="1"/>
+                    </dictionary>
+                </binding>
+            </connections>
+        </arrayController>
+    </objects>
+</document>
